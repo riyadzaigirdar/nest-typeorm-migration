@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import dbConfig from './config/db.config';
 import { User } from './user.entity';
 import { getConnectionOptions } from 'typeorm';
+import { Pet } from './pet.entity';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { getConnectionOptions } from 'typeorm';
           autoLoadEntities: true,
         }),
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Pet]),
   ],
   controllers: [AppController],
   providers: [AppService],

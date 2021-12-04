@@ -8,7 +8,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): Promise<User> {
-    return this.appService.delete('riyad');
+  getHello(): Promise<User[]> {
+    return this.appService.findUser('riyad');
   }
 }
